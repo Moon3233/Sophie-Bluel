@@ -125,6 +125,14 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+.category-buttons{
+	display: flex;
+	gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
