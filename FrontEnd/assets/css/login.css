@@ -1,0 +1,7 @@
+/* Style général pour les liens dans la navigation */
+nav ul li a {
+    text-decoration: none;
+    /* Supprime le soulignement des liens */
+    color: inherit;
+    /* Hérite de la couleur du parent pour maintenir la cohérence */
+}
