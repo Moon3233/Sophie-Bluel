@@ -52,3 +52,9 @@ main {
     text-decoration: underline;
     color: inherit;
 }
+
+.error-message {
+    color: #af3f3f;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
