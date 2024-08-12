@@ -1,7 +1,54 @@
-/* Style général pour les liens dans la navigation */
-nav ul li a {
-    text-decoration: none;
-    /* Supprime le soulignement des liens */
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer le contenu verticalement */
+    align-items: center;     /* Centrer le contenu horizontalement */
+}
+
+/* Centrage général de la section login */
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Assure que la section prend toute la hauteur de la fenêtre */
+    padding: 2rem;
+    width: 100%;
+}
+
+#login h2 {
+    margin-bottom: 2rem;
+}
+
+/* Style pour le formulaire */
+#login form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/* Styles pour les éléments du formulaire */
+#login label {
+    margin: 2em 0 1em 0;
+}
+
+#login input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+#login p a {
+    text-decoration: underline;
     color: inherit;
-    /* Hérite de la couleur du parent pour maintenir la cohérence */
 }
