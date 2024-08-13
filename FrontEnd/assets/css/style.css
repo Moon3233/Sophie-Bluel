@@ -91,7 +91,7 @@ h1 > span {
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
-	font-size: 30px;
+	font-size: 2rem;
 	color: #1D6154
 }
 nav ul {
@@ -131,9 +131,84 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+.portfolio-title {
+	display: flex;
+	justify-content: center;
+	margin: 2rem;
+	padding: 2rem;
+	gap: 1rem;
+}
+
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	padding: 2rem;
+}
+
+.edit-button {
+	background: transparent;
+	border: none;
+	font-family: inherit;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    width: 25%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+	align-items: center;
+}
+
+.modal-content h2 {
+	color: black;
+	font-family: 'Work Sans';
+	font-weight: normal;
+	font-size: 1.75rem;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.25rem;
+}
+
+.modal-gallery img {
+    width: 100%;
+	max-height: 100px;
+}
+
+.modal-gallery svg {
+	position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: black;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
 }
 
 .category-buttons{
