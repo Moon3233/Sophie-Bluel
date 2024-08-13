@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     const img = document.createElement('img');
                     img.src = work.imageUrl;
-                    img.alt = work.title;
-                    img.style.width = '100%';
 
                     // Créer l'icône de suppression
                     const deleteIcon = document.createElement('div');
