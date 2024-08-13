@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalGallery = document.getElementById('modal-gallery');
     const editModal = document.getElementById('edit-modal');
     const closeModal = document.getElementById('close-modal');
+    const token = localStorage.getItem('token');
 
     // Lorsque le bouton "Modifier" est cliqué
     editButton.addEventListener('click', function () {
         // Ouvrir le modal
         editModal.style.display = 'flex';
-
         // Charger les travaux dans le modal
         fetch('http://localhost:5678/api/works')
             .then(response => response.json())
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     const img = document.createElement('img');
                     img.src = work.imageUrl;
+                    img.alt = work.title;
 
                     // Créer l'icône de suppression
                     const deleteIcon = document.createElement('div');
@@ -34,20 +35,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Événement de clic pour supprimer l'image
                     deleteIcon.addEventListener('click', () => {
-                        if (confirm(`Êtes-vous sûr de vouloir supprimer le projet "${work.title}"?`)) {
-                            fetch(`http://localhost:5678/api/works/${work.id}`, {
-                                method: 'DELETE',
-                            })
+                        fetch(`http://localhost:5678/api/works/${work.id}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization': `Bearer ${token}`,
+                                'Content-Type': 'application/json'
+                            }
+                        })
                             .then(response => {
                                 if (response.ok) {
                                     // Supprimer l'élément du DOM
                                     figure.remove();
                                 } else {
-                                    alert("Échec de la suppression du projet.");
+                                    console.error('Erreur lors de la suppression:', response.statusText);
                                 }
                             })
-                            .catch(error => console.error('Erreur lors de la suppression:', error));
-                        }
+                            .catch(error => console.error('Erreur réseau:', error));
                     });
 
                     figure.appendChild(img);
