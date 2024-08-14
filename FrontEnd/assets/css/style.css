@@ -158,7 +158,7 @@ li:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,6 +183,13 @@ li:hover {
 	font-size: 1.75rem;
 }
 
+.initial-modal-content {
+	display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
 .modal-gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -195,13 +202,15 @@ li:hover {
 	max-height: 150px;
 }
 
-.modal-gallery svg {
+.modal-gallery i {
 	position: absolute;
     top: 0.5rem;
     right: 0.5rem;
     background-color: black;
     padding: 0.25rem;
     border-radius: 0.25rem;
+	color: white;
+	cursor: pointer;
 }
 
 .modal-content hr {
@@ -218,6 +227,98 @@ li:hover {
     font-weight: bold;
     font-family: 'Syne';
     background-color: #1D6154;
+}
+
+.add-photo-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	width: 70%;
+}
+
+.add-photo {
+	display: flex;
+	flex-direction: column;
+	border-radius: 0.25rem;
+	background: #E8F1F6;
+	width: 100%;
+}
+.add-photo p {
+	color: #444;
+	text-align: center;
+	font-size: 0.75rem;
+}
+
+.photo-preview {
+    width: 100%;
+    height: 20vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.photo-title {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 0.5rem;
+}
+
+#add-photo-form input {
+	height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 0.25rem 0.75rem rgba(0, 0, 0, 0.09);
+}
+
+.photo-category {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 0.5rem;
+}
+
+#add-photo-form select {
+	height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 0.25rem 0.75rem rgba(0, 0, 0, 0.09);
+	background-color: field;
+	background-repeat: no-repeat;
+	appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4b/Feather-arrows-chevron-down.svg');
+	position: relative;
+	background-position: calc(100% - 0.75rem) center;
+
+}
+
+/* Masquer l'input de fichier original */
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #306685;
+    border-radius: 2rem;
+	background-color: #CBD6DC;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.back-to-gallery {
+	position: absolute;
+    left: 3vw;
+    top: 4vh;
 }
 
 .close {
@@ -284,14 +385,14 @@ li:hover {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	box-shadow: 0px 0.25rem 0.75rem rgba(0, 0, 0, 0.09);
 }
 #contact label {
 	margin: 2em 0 1em 0;
 }
 #contact textarea {
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	box-shadow: 0px 0.25rem 0.75rem rgba(0, 0, 0, 0.09);
 }
 
 input[type="submit"]{
@@ -303,6 +404,14 @@ input[type="submit"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+}
+
+.message-container {
+	position: fixed;
+	bottom: 5vh;
+	left: 50%;
+    transform: translateX(-50%);
+	z-index: 2;
 }
 
 footer {
