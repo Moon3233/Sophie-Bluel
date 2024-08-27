@@ -58,13 +58,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 gallery.innerHTML = ''; // Vider la galerie avant d'ajouter les nouveaux travaux
                 works.forEach(work => {
                     const figure = document.createElement('figure'); // Créer une figure pour chaque travail
+                    figure.setAttribute('id', `figure-${work.id}`); // Ajouter un identifiant unique basé sur l'ID du travail
+            
                     const img = document.createElement('img'); // Créer une image pour chaque travail
                     img.src = work.imageUrl; // Définir la source de l'image
                     img.alt = work.title; // Définir le texte alternatif de l'image
+            
                     const figcaption = document.createElement('figcaption'); // Créer une légende pour chaque travail
                     figcaption.textContent = work.title; // Définir le texte de la légende
+            
                     figure.appendChild(img); // Ajouter l'image à la figure
                     figure.appendChild(figcaption); // Ajouter la légende à la figure
+            
                     gallery.appendChild(figure); // Ajouter la figure à la galerie
                 });
             }

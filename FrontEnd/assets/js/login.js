@@ -25,7 +25,7 @@ document.querySelector('#login form').addEventListener('submit', async function(
         if (response.ok) {
             // Rediriger l'utilisateur et stocker le token dans le localStorage
             localStorage.setItem('token', data.token); // Stockage du token
-            window.location.href = '/FrontEnd'; // Redirige vers la page d'accueil une fois la connexion réussie
+            window.location.href = 'index.html'; // Redirige vers la page d'accueil une fois la connexion réussie
         } else {
             // Afficher le message d'erreur dans le div
             errorMessageDiv.textContent = 'Identifiant et/ou mot de passe incorrect';
@@ -37,3 +37,4 @@ document.querySelector('#login form').addEventListener('submit', async function(
         errorMessageDiv.textContent = 'Une erreur est survenue lors de la tentative de connexion. Veuillez réessayer plus tard.';
     }
 });
+
