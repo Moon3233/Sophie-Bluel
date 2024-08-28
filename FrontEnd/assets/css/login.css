@@ -14,6 +14,10 @@ main {
     align-items: center;     /* Centrer le contenu horizontalement */
 }
 
+.login {
+    font-weight: bold;
+}
+
 /* Centrage général de la section login */
 #login {
     display: flex;
