@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginLink = document.querySelector('nav ul li a[href="login.html"]');
     const editButton = document.getElementById('edit-button'); // Sélectionner le bouton Modifier
+    const categoryButtonsContainer = document.getElementById('category-buttons'); // Sélectionner le conteneur des boutons de catégorie
 
     // Vérifier si l'utilisateur est connecté en vérifiant si le token est présent dans le localStorage
     const token = localStorage.getItem('token');
@@ -13,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (editButton) {
             editButton.style.display = 'block';
         }
+
+        categoryButtonsContainer.style.display = 'none'; // Cacher les filtres si connecté
 
         // Si l'utilisateur est connecté, créez la barre noire "Mode édition"
         const editModeBar = document.createElement('div');
@@ -49,12 +52,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 editModeBar.remove(); // Retirer l'élément du DOM
             }
 
+            // Réafficher les filtres après la déconnexion
+            categoryButtonsContainer.style.display = 'flex';
+
             // Supprimer l'écouteur d'événement pour permettre le retour du comportement normal de "login"
             loginLink.removeEventListener('click', arguments.callee);
         });
     } else {
         // Si l'utilisateur n'est pas connecté, s'assurer que le lien affiche "login"
         loginLink.textContent = 'login';
+        
 
         // Masquer le bouton Modifier
         if (editButton) {

@@ -179,11 +179,15 @@ li:hover {
     align-items: center;
 }
 
+.edit-modal {
+	position: relative;
+    width: 40%;
+}
+
 .modal-content {
     background-color: white;
     padding: 2rem;
     border-radius: 0.75rem;
-    width: 40%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -351,6 +355,7 @@ input[type="file"] {
     right: 20px;
     font-size: 24px;
     cursor: pointer;
+	z-index: 2;
 }
 
 .category-buttons{
